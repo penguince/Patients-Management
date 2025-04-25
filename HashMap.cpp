@@ -1,7 +1,6 @@
 #include "HashMap.hpp"
 
-template<typename T>
-static int HashMap<T>::getIntFromString(std::string name) {
+static int HashMap::getIntFromString(std::string name) {
   int finalValue = 0;
   int value = 0;
   for(int i = 0; i < name.length(); i++) {
@@ -11,16 +10,21 @@ static int HashMap<T>::getIntFromString(std::string name) {
     finalValue = finalValue<<2;
     value=0;
   }
-  return finalValue%10;
+  return finalValue%1000;
 }
 
 template<typename T>
-T HashMap<T>::get(std::string key) {
+HashMap<T>::HashMap() {
+  hashmaparr(1000, nullptr);
+}
+
+template<typename T>
+T* HashMap<T>::get(std::string key) {
   return this.hashmaparr[getIntFromString(key)];
 }
 
 template<typename T>
-void HashMap<T>::insert(std::string key, T value) {
+void HashMap<T>::insert(std::string key, T* value) {
   int index = getIntFromString(key);
   this.hashmaparr[index] = value;
 }

@@ -12,7 +12,7 @@ class PriorityQueue {
     bool empty();
     T front();
     T back();
-    void enqueue(Patients*, int);
+    void enqueue(T*, int);
     void pop();
     int size();
 };
