@@ -1,8 +1,10 @@
 #pragma once
-#include<iostream>
-#include<string>
-#include<vector>
-#include "Hospital.hpp"
+#include <iostream>
+#include <string>
+#include <vector>
+
+// Forward declaration
+struct Patients;
 
 template<typename T>
 class PriorityQueue {
@@ -10,8 +12,8 @@ class PriorityQueue {
   public:
     PriorityQueue();
     bool empty();
-    T front();
-    T back();
+    T* front();
+    T* back();
     void enqueue(T*, int);
     void pop();
     int size();
